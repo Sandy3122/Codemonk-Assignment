@@ -19,13 +19,20 @@
     <script>
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
-
+    
         canvas.addEventListener('mousemove', drawCircle);
-
+        canvas.addEventListener('touchmove', drawCircle);
+    
         function drawCircle(event) {
-            const x = event.clientX - canvas.offsetLeft;
-            const y = event.clientY - canvas.offsetTop;
-
+            let x, y;
+            if (event.type === 'mousemove') {
+                x = event.clientX - canvas.offsetLeft;
+                y = event.clientY - canvas.offsetTop;
+            } else if (event.type === 'touchmove') {
+                x = event.touches[0].clientX - canvas.offsetLeft;
+                y = event.touches[0].clientY - canvas.offsetTop;
+            }
+    
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.beginPath();
             ctx.arc(x, y, 30, 0, 2 * Math.PI);
