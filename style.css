@@ -1,0 +1,39 @@
+h1{
+    font-style:italic;
+    text-align: center;
+    margin: 10px;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+canvas {
+    border: 1px solid black;
+    cursor: default; /* Set cursor to default (arrow) */
+}
+
+.button {
+    padding: 10px 20px;
+    margin: 20px;
+    background-color: #748ed5;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: rgb(71, 71, 188);
+}

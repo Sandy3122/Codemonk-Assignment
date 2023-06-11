@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <h1><u>Level 1</u></h1>
+    <section>
+        <div class="container">
+        <canvas id="canvas" width="500" height="500"></canvas>
+        <a href="index.html">
+            <button type="button" class="button">Back</button>
+        </a>
+      </div>
+    </section>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.addEventListener('mousemove', drawCircle);
+
+        function drawCircle(event) {
+            const x = event.clientX - canvas.offsetLeft;
+            const y = event.clientY - canvas.offsetTop;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.arc(x, y, 30, 0, 2 * Math.PI);
+            ctx.stroke();
+        }
+    </script>
+</body>
+</html>

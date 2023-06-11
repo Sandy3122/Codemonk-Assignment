@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <h1><u>Level 2</u></h1>
+    <section>
+        <div class="container">
+        <canvas id="canvas" width="500" height="500"></canvas>
+        <a href="index.html">
+            <button type="button" class="button">Back</button>
+        </a>
+      </div>
+    </section>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const halfWidth = canvas.width / 2;
+
+        canvas.addEventListener('mousemove', drawCircle);
+
+        function drawCircle(event) {
+            const x = event.clientX - canvas.offsetLeft;
+            const y = event.clientY - canvas.offsetTop;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw a vertical line to divide the canvas into two halves
+            ctx.beginPath();
+            ctx.moveTo(halfWidth, 0);
+            ctx.lineTo(halfWidth, canvas.height);
+            ctx.stroke();
+
+            // Draw the circle in the current half
+            ctx.beginPath();
+            ctx.arc(x, y, 30, 0, 2 * Math.PI);
+            ctx.stroke();
+
+            // Draw the mirror image in the other half
+            const mirrorX = (x < halfWidth) ? halfWidth + (halfWidth - x) : halfWidth - (x - halfWidth);
+            const mirrorY = y;
+
+            ctx.beginPath();
+            ctx.arc(mirrorX, mirrorY, 30, 0, 2 * Math.PI);
+            ctx.stroke();
+        }
+    </script>
+</body>
+</html>
+
