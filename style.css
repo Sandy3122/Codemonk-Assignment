@@ -26,6 +26,10 @@ canvas {
     height: auto;
 }
 
+a{
+    text-decoration: none;
+}
+
 .button {
     padding: 10px 20px;
     margin: 20px;
