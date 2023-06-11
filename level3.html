@@ -34,7 +34,7 @@
       ctx.stroke();
 
       canvas.addEventListener('mousemove', drawCircle);
-      canvas.addEventListener('touchmove', drawCircle);
+      canvas.addEventListener('touchmove', drawCircle, { passive: false });
   
       function drawCircle(event) {
           let x, y;
