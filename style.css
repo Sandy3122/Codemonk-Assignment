@@ -22,6 +22,8 @@ section {
 canvas {
     border: 1px solid black;
     cursor: default; /* Set cursor to default (arrow) */
+    max-width: 100%;
+    height: auto;
 }
 
 .button {
@@ -33,6 +35,7 @@ canvas {
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
+    display: block;
 }
 .button:hover{
     background-color: rgb(71, 71, 188);
