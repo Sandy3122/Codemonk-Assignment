@@ -21,7 +21,7 @@
         const ctx = canvas.getContext('2d');
     
         canvas.addEventListener('mousemove', drawCircle);
-        canvas.addEventListener('touchmove', drawCircle);
+        canvas.addEventListener('touchmove', drawCircle, { passive: false });
     
         function drawCircle(event) {
             let x, y;
